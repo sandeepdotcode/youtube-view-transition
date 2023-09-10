@@ -1,0 +1,39 @@
+---
+import { navLinks, playlists, channelSubs } from '../sidebarData';
+import SidebarItem from "./SidebarItem.astro";
+---
+<div class="w-60 h-full overflow-y-auto">
+  <nav class="flex flex-col">
+    <section class="flex flex-col p-4 border-b dark:border-zinc-600">
+      { navLinks.map(link => (
+          <SidebarItem text={link.text} route={link.route}>
+            <span class="w-4 fill-zinc-200">
+              <Fragment set:html={link.icon} /> 
+            </span>
+          </SidebarItem>
+        ))
+      }
+    </section>
+    <section class="flex flex-col p-4 border-b dark:border-zinc-600">
+      {
+        playlists.map(list => (
+          <SidebarItem text={list.text} route={list.route}>
+            <span class="w-4 fill-zinc-200">
+              <Fragment set:html={list.icon} />
+            </span>
+          </SidebarItem>
+        ))
+      }
+    </section>
+    <section class="flex flex-col p-4 border-b dark:border-zinc-600">
+      <h3>Subsriptions</h3>
+      {
+        channelSubs.map((channel) => (
+          <SidebarItem text={channel.name} route={channel.route}>
+            <img src={channel.avatar} class="w-6 rounded-md" />
+          </SidebarItem>
+        ))
+      }
+    </section>
+  </nav>
+</div>

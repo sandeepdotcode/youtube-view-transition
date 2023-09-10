@@ -1,0 +1,13 @@
+---
+export interface Props {
+  text: string;
+  route: string;
+}
+
+const { text, route } = Astro.props as Props;
+---
+
+<a href={route} class="h-10 px-3 rounded-md flex items-center gap-6 select-none dark:hover:bg-zinc-800">
+  <slot />
+  <span>{ text }</span>
+</a>
