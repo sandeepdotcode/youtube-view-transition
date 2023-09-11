@@ -1,5 +1,5 @@
 <div class="flex justify-center items-center w-1/2">
-  <div class="h-8 basis-1/2 pl-4 rounded-l border flex items-center focus-within:outline outline-1 outline-blue-400 dark:border-zinc-700">
+  <div class="h-8 basis-1/2 pl-4 rounded-l border flex items-center focus-within:outline outline-1 outline-blue-400 dark:border-zinc-700 dark:bg-zinc-900">
     <input type="text" placeholder="Search" class="w-full outline-none dark:bg-zinc-900 dark:text-zinc-50" />
   </div>
   <button type="button" class="h-8 w-12 rounded-r flex justify-center items-center dark:bg-zinc-800">
