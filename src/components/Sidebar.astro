@@ -1,8 +1,8 @@
 ---
-import { navLinks, playlists, channelSubs } from '../sidebarData';
+import { navLinks, playlists, channelSubs } from '../utils/sidebarData';
 import SidebarItem from "./SidebarItem.astro";
 ---
-<div class="w-60 h-full overflow-y-auto">
+<div class="basis-60 shrink-0 h-full overflow-y-auto">
   <nav class="flex flex-col">
     <section class="flex flex-col p-4 border-b dark:border-zinc-600">
       { navLinks.map(link => (

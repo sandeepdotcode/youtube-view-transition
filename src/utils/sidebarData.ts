@@ -1,11 +1,11 @@
-import homeIcon from './components/icons/home.svg?raw';
-import fireIcon from './components/icons/fire.svg?raw';
-import subIcon from './components/icons/subscriptions.svg?raw';
-import libIcon from './components/icons/library.svg?raw';
-import histIcon from './components/icons/history.svg?raw';
-import vidIcon from './components/icons/videos.svg?raw';
-import laterIcon from './components/icons/schedule.svg?raw';
-import listIcon from './components/icons/playlist.svg?raw';
+import homeIcon from '../components/icons/home.svg?raw';
+import fireIcon from '../components/icons/fire.svg?raw';
+import subIcon from '../components/icons/subscriptions.svg?raw';
+import libIcon from '../components/icons/library.svg?raw';
+import histIcon from '../components/icons/history.svg?raw';
+import vidIcon from '../components/icons/videos.svg?raw';
+import laterIcon from '../components/icons/schedule.svg?raw';
+import listIcon from '../components/icons/playlist.svg?raw';
 
 const navLinks = [
   {

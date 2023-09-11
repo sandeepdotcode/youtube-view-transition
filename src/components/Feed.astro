@@ -1,0 +1,38 @@
+---
+import { getDataFromYTV3, getDataFromYTAPI } from '../utils/getDataFromAPI';
+import FeedItem from './FeedItem.astro';
+import VidLength from './VidLength.astro';
+
+const url = "search?part=snippet&q=js+frameworks&regionCode=US&maxResults=24";
+const ytUrl = "home?lang=en";
+const resp = await getDataFromYTAPI(ytUrl);
+---
+
+<div class="grow h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 mt-4">
+  { resp.data.map((item) => {
+    switch(item.type) {
+      case "video":
+        return (
+          <FeedItem title={item.title} videoId={item.videoId} thumb={item.type === "video" ? item.thumbnail[0].url : "null"}
+            publishTime={item.publishedTimeText} views={item.viewCount}
+            channelTitle={item.channelTitle} channelThumb={item.channelThumbnail[0].url}>
+            <VidLength isText={true} length={item.lengthText} />
+          </FeedItem>
+        );
+      case "video_listing":
+        return item.data.map((lItem) => (
+          <FeedItem title={lItem.title} videoId={lItem.videoId} thumb={lItem.thumbnail[0].url}
+            publishTime={lItem.publishedTimeText} views={lItem.viewCount}
+            channelTitle={lItem.channelTitle} channelThumb={lItem.channelThumbnail[0].url}>
+            <VidLength isText={true} length={lItem.lengthText} />
+          </FeedItem>
+        ));
+      default:
+        return null;
+    }
+  })}
+</div>
+
+<script define:vars={{resp}}>
+  console.log(resp);
+</script>
