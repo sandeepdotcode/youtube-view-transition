@@ -2,7 +2,7 @@
 import { navLinks, playlists, channelSubs } from '../utils/sidebarData';
 import SidebarItem from "./SidebarItem.astro";
 ---
-<div class="basis-60 shrink-0 h-full overflow-y-auto">
+<div data-sidebar class="basis-60 shrink-0 h-full overflow-y-auto w-60 -translate-x-60 md:translate-x-0 z-10 absolute md:static dark:bg-zinc-900 hidden md:block">
   <nav class="flex flex-col">
     <section class="flex flex-col p-4 border-b dark:border-zinc-600">
       { navLinks.map(link => (
