@@ -8,7 +8,7 @@ const ytUrl = "home?lang=en";
 const resp = await getDataFromYTAPI(ytUrl);
 ---
 
-<div class="grow h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 mt-4">
+<div class="grow h-full grid grid-cols-1 md:grid-cols-2 overflow-y-auto lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 pt-16 mt-4">
   { resp.data.map((item) => {
     switch(item.type) {
       case "video":
