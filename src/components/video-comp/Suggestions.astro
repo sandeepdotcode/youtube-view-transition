@@ -1,0 +1,11 @@
+---
+export interface Props {
+  videoId: string;
+}
+
+const { videoId } = Astro.props as Props;
+---
+
+<div class="bg-green-300 flex flex-col md:basis-[30rem] mx-4 md:mx-0">
+  <p>Suggested video</p>
+</div>

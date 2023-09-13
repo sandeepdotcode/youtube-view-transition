@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VideoMain from '../../components/video-comp/VideoMain.svelte';
+import { getDataFromYTAPI } from '../../utils/getDataFromAPI';
+import Suggestions from '../../components/video-comp/Suggestions.astro';
+
+const { videoId } = Astro.params;
+
+const url = `video/info?id=${videoId}`;
+const resp = await getDataFromYTAPI(url);
+  
+const channelUrl = `channel/about?id=${'UCE_M8A5yxnLfW0KghEeajjw'}`
+const channelResp = await getDataFromYTAPI(channelUrl);
+---
+<Layout title={resp.title}>
+  <div class="md:p-16 pt-16 md:pt-20 w-full h-full overflow-y-auto flex flex-col lg:flex-row gap-8 lg:gap-12">
+    <div class="flex flex-col w-full">
+      <VideoMain client:load title={resp.title} videoId={videoId ? videoId : "null"} date={resp.publishDate} desc={resp.description}
+        viewCount={resp.viewCount} channelId={resp.channelId} />
+    </div>
+    <Suggestions videoId={videoId} />
+  </div>
+</Layout>
+
+<script define:vars={{resp,channelResp}}>
+  console.log(resp)
+</script>
