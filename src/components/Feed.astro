@@ -20,7 +20,7 @@ const resp = await getDataFromYTAPI(ytUrl);
           </FeedItem>
         );
       case "video_listing":
-        return item.data.map((lItem) => (
+        return item.data?.map((lItem) => (
           <FeedItem title={lItem.title} videoId={lItem.videoId} thumb={lItem.thumbnail[0].url}
             publishTime={lItem.publishedTimeText} views={lItem.viewCount}
             channelTitle={lItem.channelTitle} channelThumb={lItem.channelThumbnail[0].url}>

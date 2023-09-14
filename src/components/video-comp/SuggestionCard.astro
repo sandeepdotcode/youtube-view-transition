@@ -1,0 +1,17 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  thumb: string;
+}
+
+const { id, title, thumb } = Astro.props as Props;
+---
+<a href={`/video/${id}`} class="relative group/sug h-[102px] hover:brightness-50 transition-all duration-200">
+  <div class="rounded group-hover/sug:rounded-none overflow-hidden absolute top-[4px] left-0 h-[94px] w-[168px] brightness-90">
+    <img src={thumb} alt="image" class=" object-cover" />
+  </div>
+  <div class="pl-[184px]">
+    <h5 class="max-h-[3.6rem] leading-[1.8rem] text-ellipsis overflow-hidden break-all">{ title }</h5>
+  </div>
+</a>

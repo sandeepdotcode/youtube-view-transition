@@ -1,11 +1,33 @@
 ---
+import { getDataFromYTAPI } from '../../utils/getDataFromAPI';
+import SuggestionCard from './SuggestionCard.astro';
+
 export interface Props {
   videoId: string;
 }
 
 const { videoId } = Astro.props as Props;
+
+const url = `related?id=${videoId}`;
+const resp = await getDataFromYTAPI(url);
 ---
 
-<div class="bg-green-300 flex flex-col md:basis-[30rem] mx-4 md:mx-0">
+<div class="flex flex-col gap-4 md:basis-[36rem] mx-4 md:mx-0">
   <p>Suggested video</p>
+  <div class="flex flex-col gap-4">
+    { resp.data?.slice(0, 7).map((item) => (
+        <SuggestionCard id={item.videoId} title={item.title} thumb={item.thumbnail[0].url} />
+      ))
+    }
+  </div>
+  <div class="flex flex-col gap-4 hidden" id="suggestionLatter">
+    { resp.data?.slice(7).map((item) => (
+        <SuggestionCard id={item.videoId} title={item.title} thumb={item.thumbnail[0].url} />
+      ))
+    }
+  </div>
 </div>
+
+<script define:vars={{resp}}>
+  console.log(resp)
+</script>

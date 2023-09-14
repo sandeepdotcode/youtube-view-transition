@@ -12,15 +12,18 @@
   const channelUrl = `channel/about?id=${channelId}`
   let channelDetails;
   onMount(async () => {
-    console.log(channelUrl)
     channelDetails = await getDataFromYTAPI(channelUrl);
-    console.log(channelDetails)
   })
   
   let expanded = false;
   
   function expandDesc() {
     expanded = !expanded;
+  }
+  
+  $: if (expanded) {
+    const sugLatter = document.getElementById("suggestionLatter");
+    sugLatter?.classList.remove("hidden");
   }
 </script>
 
