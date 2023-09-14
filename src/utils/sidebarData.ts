@@ -56,42 +56,42 @@ const playlists = [
 const channelSubs = [
   {
     name: "Lofi Girl",
-    route: "/channel/",
+    route: "/channel/UCSJ4gkVC6NrvII8umztf0Ow",
     avatar: "https://yt3.googleusercontent.com/gY8H7K-3Eg3olVftRBiqqFe-N5d9Rx90jAsrfQuxDa4m32Wm-kWK6AQJhwchvYLf-H4EjGhCSw=s176-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Traversy Media",
-    route: "/channel/",
+    route: "/channel/UC29ju8bIPH5as8OGnQzwJyA",
     avatar: "https://yt3.googleusercontent.com/ytc/AOPolaT_7mZQjCdmaa3h1bJ-jUspCCfvL_1MNLRWYP-L3A=s176-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Luke Smith",
-    route: "/channel/",
+    route: "/channel/UC2eYFnH61tmytImy1mTYvhA",
     avatar: "https://yt3.googleusercontent.com/WEh3wNCWfxK7vgqVwTRLck3_76wm-pzsVO84gSeHUelk70-6njLXpP3jHTcEqHSjCrkSTtdL_w=s176-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Louis Rossmann",
-    route: "/channel/",
+    route: "/channel/UCl2mFZoRqjw_ELax4Yisf6w",
     avatar: "https://yt3.googleusercontent.com/R3gmOcHjkiO6FMCSoAMSrUkIliuT42oGUiWTgIeauigfTyqPLAv4UxwsXIqFN3s2b3uJ846y-Q=s176-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Ben Eater",
-    route: "/channel/",
+    route: "/channel/UCS0N5baNlQWJCUrhCEo8WlA",
     avatar: "https://yt3.googleusercontent.com/ytc/AOPolaRrY6YUKKlIqyA6h1HVtdQM4IqoT2gc3rabqqYl=s176-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Jack Herrington",
-    route: "/channel/",
+    route: "/channel/UC6vRUjYqDuoUsYsku86Lrsw",
     avatar: "https://yt3.googleusercontent.com/ytc/AOPolaQejEQ1wJXNgJdv_ah_WsXWHBs7if8Y6Z1tKkCOkg=s176-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "3Blue1Brown",
-    route: "/channel/",
+    route: "/channel/UCYO_jab_esuFRV4b17AJtAw",
     avatar: "https://yt3.googleusercontent.com/ytc/AOPolaROW_3OBcak6OYl0JetcvYY8xmEvVJbXVhkxYxbPA=s176-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Fireship",
-    route: "/channel/",
+    route: "/channel/UCsBjURrPoezykLs9EqgamOA",
     avatar: "https://yt3.googleusercontent.com/ytc/AOPolaQ2iMmw9cWFFjnwa13nBwtZQbl-AqGYkkiTqNaTLg=s176-c-k-c0x00ffffff-no-rj",
   },
 ]

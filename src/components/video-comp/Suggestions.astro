@@ -1,6 +1,7 @@
 ---
 import { getDataFromYTAPI } from '../../utils/getDataFromAPI';
 import SuggestionCard from './SuggestionCard.astro';
+import VidLength from '../VidLength.astro';
 
 export interface Props {
   videoId: string;
@@ -16,13 +17,19 @@ const resp = await getDataFromYTAPI(url);
   <p>Suggested video</p>
   <div class="flex flex-col gap-4">
     { resp.data?.slice(0, 7).map((item) => (
-        <SuggestionCard id={item.videoId} title={item.title} thumb={item.thumbnail[0].url} />
+        <SuggestionCard id={item.videoId} title={item.title} thumb={item.thumbnail[0].url} channelTitle={item.channelTitle}
+          publishTime={item.publishedTimeText} views={item.viewCount}>
+          <VidLength length={item.lengthText} />
+        </SuggestionCard>
       ))
     }
   </div>
   <div class="flex flex-col gap-4 hidden" id="suggestionLatter">
     { resp.data?.slice(7).map((item) => (
-        <SuggestionCard id={item.videoId} title={item.title} thumb={item.thumbnail[0].url} />
+        <SuggestionCard id={item.videoId} title={item.title} thumb={item.thumbnail[0].url} channelTitle={item.channelTitle}
+          publishTime={item.publishedTimeText} views={item.viewCount}>
+          <VidLength length={item.lengthText} />
+        </SuggestionCard>
       ))
     }
   </div>

@@ -1,10 +1,10 @@
 ---
 export interface Props {
-  isText: boolean;
+  isText?: boolean;
   length: string;
 }
 
-const { isText, length } = Astro.props as Props;
+const { isText = true, length } = Astro.props as Props;
 ---
 
 <div class:list={["absolute bottom-2 right-2 bg-black py-1 px-2 text-white text-xs rounded", { "bg-red-500": isText && length === "LIVE"}]}>

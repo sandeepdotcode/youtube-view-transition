@@ -1,0 +1,33 @@
+---
+import Feed from '../../components/Feed.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getDataFromYTAPI } from '../../utils/getDataFromAPI';
+
+const { channelId } = Astro.params;
+
+const url = `channel/home?id=${channelId}`;
+const resp = await getDataFromYTAPI(url);
+---
+
+<Layout title={resp.meta?.title}>
+  <div class="grow flex flex-col pt-16 overflow-y-auto">
+    <div class="bg-red-500 basis-[20vw] overflow-hidden shrink-0">
+      <img src={resp.meta?.banner[2].url} alt="" class="h-full w-full object-cover" />
+    </div>
+    <div class="flex gap-4 p-8 pb-0">
+      <div class="md:h-32 md:w-32 rounded-full overflow-hidden hidden md:block">
+        <img src={resp.meta?.avatar[2].url} alt="avatar" class="h-full w-full object-cover">
+      </div>
+      <div class="flex flex-col gap-2">
+        <h2 class="text-2xl">{ resp.meta?.title }</h2>
+        <div class="flex gap-4 text-white/[0.7] text-sm">
+          <span>{ resp.meta?.channelHandle }</span><span>{ resp.meta?.subscriberCountText + " subscribers" }</span>
+        </div>
+        <!-- <div class="truncate text-white/[0.7] text-sm">{ resp.meta?.description }</div> -->
+      </div>
+    </div>
+    <div>
+      <Feed url={`channel/videos?id=${channelId}`} isChannel={true} />
+    </div>
+  </div>
+</Layout>

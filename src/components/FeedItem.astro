@@ -7,22 +7,25 @@ export interface Props {
   publishTime?: string;
   channelTitle: string;
   channelThumb: string;
+  showChannelThumb?: boolean;
 }
 
-const { title, videoId, thumb, views, publishTime, channelTitle, channelThumb } = Astro.props as Props;
+const { title, videoId, thumb, views, publishTime, channelTitle, channelThumb, showChannelThumb = true } = Astro.props as Props;
 
 const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 ---
 
-<a href={`video/${videoId}`} class="flex flex-col hover:brightness-50 transition-all duration-200 group gap-2">
+<a href={`/video/${videoId}`} class="flex flex-col hover:brightness-50 transition-all duration-200 group gap-2">
   <div class="relative rounded-md overflow-hidden bg-red-400 group-hover:rounded-none transition-all duration-200">
     <img src={ thumb } class="object-contain h-full w-full" />
     <slot />
   </div>
   <div class="flex items-start mt-2 gap-4 pr-4">
-    <div class="w-8 rounded-lg overflow-hidden">
-      <img src={ channelThumb } class="h-full w-full object-contain" />
-    </div>
+    { showChannelThumb &&
+      <div class="w-8 rounded-lg overflow-hidden">
+        <img src={ channelThumb } class="h-full w-full object-contain" />
+      </div>
+    }
     <div class="flex flex-col gap-2">
       <h5 class="text-ellipsis">{ title }</h5>
       <div class="text-sm font-semibold text-white/[0.7] flex flex-col gap-1">
