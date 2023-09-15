@@ -5,9 +5,12 @@ export interface Props {
 }
 
 const { text, route } = Astro.props as Props;
+const path = Astro.url.pathname;
+
+const viewing = (path === route)
 ---
 
-<a href={route} class="h-10 px-3 rounded-md flex items-center gap-6 select-none hover:bg-zinc-100 dark:hover:bg-zinc-800">
+<a href={route} class:list={["h-10 px-3 rounded-md flex items-center gap-6 select-none hover:bg-zinc-100 dark:hover:bg-zinc-800", { "bg-zinc-200 dark:bg-zinc-700": viewing }]}>
   <slot />
   <span>{ text }</span>
 </a>
