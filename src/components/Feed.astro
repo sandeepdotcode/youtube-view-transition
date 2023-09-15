@@ -15,8 +15,8 @@ const resp = await getDataFromYTAPI(url);
 ---
 
 <div class:list={["grow h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 mt-4",{ "pt-16 overflow-y-auto": !isChannel}]}>
-  { !isChannel &&
-    resp.data.map((item) => {
+  { !isChannel && !isList &&
+    resp.data?.map((item) => {
     switch(item.type) {
       case "video":
         return (
@@ -39,7 +39,7 @@ const resp = await getDataFromYTAPI(url);
     }
   })}
   { isChannel &&
-    resp.data.slice(0, 12).map((item) => (
+    resp.data?.slice(0, 12).map((item) => (
       <FeedItem title={item.title} videoId={item.videoId} thumb={item.thumbnail[3].url}
         publishTime={item.publishedTimeText} views={item.viewCount} channelTitle={resp.meta?.title}
         channelThumb="nolink" showChannelThumb={false}>
@@ -47,7 +47,7 @@ const resp = await getDataFromYTAPI(url);
       </FeedItem>
     ))}
   { isList &&
-    resp.data.map((item) => (
+    resp.data?.map((item) => (
       <FeedItem title={item.title} videoId={item.videoId} thumb={item.thumbnail[3].url}
         publishTime={item.publishedTimeText} views={item.viewCount} channelTitle={resp.meta?.title}
         channelThumb="nolink" showChannelThumb={false}>

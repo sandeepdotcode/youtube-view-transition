@@ -43,12 +43,12 @@ const playlists = [
   },
   {
     text: "Watch later",
-    route: "/playlist?list=WL",
+    route: "/playlist/PLUcwSypGF88psiobBt1b9uBqMNWobKvFQ",
     icon: laterIcon,
   },
   {
     text: "Cat videos",
-    route: "/playlist?list=catvideos",
+    route: "/playlist/PLUcwSypGF88qmfOeNkB5yFQJ_7YrpW3s3",
     icon: listIcon,
   },
 ]
