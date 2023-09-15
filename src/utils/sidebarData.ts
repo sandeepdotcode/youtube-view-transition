@@ -90,10 +90,40 @@ const channelSubs = [
     avatar: "https://yt3.googleusercontent.com/ytc/AOPolaROW_3OBcak6OYl0JetcvYY8xmEvVJbXVhkxYxbPA=s176-c-k-c0x00ffffff-no-rj",
   },
   {
+    name: "Tibees",
+    route: "/channel/UC52kszkc08-acFOuogFl5jw",
+    avatar: "https://yt3.ggpht.com/o4Z1JBn15yRwJi-H0Vb6pj3jsdezVyYXNEO-aQvn5gKcyXJtGMak90CTPufhXmkKUZjFwbJXVA=s176-c-k-c0x00ffffff-no-rj-mo",
+  },
+  {
+    name: "Dave2D",
+    route: "/channel/UCVYamHliCI9rw1tHR1xbkfw",
+    avatar: "https://yt3.googleusercontent.com/ytc/AOPolaQMSJwwcYJCD71X-_-nANQQmPUSOgJ9gWEah5jPjQ=s176-c-k-c0x00ffffff-no-rj-mo",
+  },
+  {
     name: "Fireship",
     route: "/channel/UCsBjURrPoezykLs9EqgamOA",
     avatar: "https://yt3.googleusercontent.com/ytc/AOPolaQ2iMmw9cWFFjnwa13nBwtZQbl-AqGYkkiTqNaTLg=s176-c-k-c0x00ffffff-no-rj",
   },
+  {
+    name: "Kevin Powell",
+    route: "/channel/UCJZv4d5rbIKd4QHMPkcABCw",
+    avatar: "https://yt3.googleusercontent.com/ytc/AOPolaQR_Lnv5b9h4p1LUPilyh96JlxohG9SO5KfEY84IQ=s176-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "freeCodeCamp",
+    route: "/channel/UC8butISFwT-Wl7EV0hUK0BQ",
+    avatar: "https://yt3.googleusercontent.com/ytc/AOPolaTs1IEit9EUooQAJkWS4SkpUE7oMDXYrjIgnOk1Kw=s176-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Brodie Robertson",
+    route: "/channel/UCld68syR8Wi-GY_n4CaoJGA",
+    avatar: "https://yt3.googleusercontent.com/ytc/AOPolaSRYHLmLH21G_0JEncG0N94-t3DXGqxPVLLt10hUw=s176-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Programmers are also Human",
+    route: "/channel/UCi8C7TNs2ohrc6hnRQ5Sn2w",
+    avatar: "https://yt3.googleusercontent.com/ytc/AOPolaSpCy0r60g0noTkzzovRmF71UuiCTyDshivIdIm=s176-c-k-c0x00ffffff-no-rj",
+  }
 ]
 
 export { navLinks, playlists, channelSubs }

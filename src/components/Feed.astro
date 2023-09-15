@@ -1,14 +1,15 @@
 ---
-import { getDataFromYTV3, getDataFromYTAPI } from '../utils/getDataFromAPI';
+import { getDataFromYTAPI } from '../utils/getDataFromAPI';
 import FeedItem from './FeedItem.astro';
 import VidLength from './VidLength.astro';
 
 export interface Props {
   url?: string;
   isChannel?: boolean;
+  isList?: boolean;
 }
 
-const { url = "home?lang=en", isChannel = false } = Astro.props as Props;
+const { url = "home?lang=en", isChannel = false, isList = false } = Astro.props as Props;
 
 const resp = await getDataFromYTAPI(url);
 ---
@@ -39,6 +40,14 @@ const resp = await getDataFromYTAPI(url);
   })}
   { isChannel &&
     resp.data.slice(0, 12).map((item) => (
+      <FeedItem title={item.title} videoId={item.videoId} thumb={item.thumbnail[3].url}
+        publishTime={item.publishedTimeText} views={item.viewCount} channelTitle={resp.meta?.title}
+        channelThumb="nolink" showChannelThumb={false}>
+        <VidLength isText={true} length={item.lengthText} />
+      </FeedItem>
+    ))}
+  { isList &&
+    resp.data.map((item) => (
       <FeedItem title={item.title} videoId={item.videoId} thumb={item.thumbnail[3].url}
         publishTime={item.publishedTimeText} views={item.viewCount} channelTitle={resp.meta?.title}
         channelThumb="nolink" showChannelThumb={false}>
