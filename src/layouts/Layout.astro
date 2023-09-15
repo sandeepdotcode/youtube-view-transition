@@ -28,3 +28,18 @@ const { title } = Astro.props;
 		</div>
 	</body>
 </html>
+
+<style is:global>
+	*::-webkit-scrollbar{
+		width: 2px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	
+	.dark *::-webkit-scrollbar-thumb {
+		background-color: rgb(161, 161, 170);
+		border-radius: 20px;
+	}
+</style>
