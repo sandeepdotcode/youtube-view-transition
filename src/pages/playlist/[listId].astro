@@ -6,6 +6,5 @@ const { listId } = Astro.params;
 ---
 
 <Layout title="Trending">
-  <div>Trending</div>
   <Feed url={`playlist?id=${listId}`} isList={true} />
 </Layout>
