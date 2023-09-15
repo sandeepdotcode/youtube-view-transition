@@ -36,7 +36,7 @@
         <div class="w-12 rounded-lg overflow-hidden"><img src={channelDetails?.avatar[0].url} alt="" /></div>
         <div class="flex flex-col gap-1">
           <a href={`/channel/${channelId}`} class="font-bold">{ channelDetails ? channelDetails.title : '' }</a>
-          <span class="text-sm">{ channelDetails ? channelDetails.subscriberCountText : '' }</span>
+          <span class="text-sm">{ channelDetails ? channelDetails.subscriberCountText + " subscribers" : '' }</span>
         </div>
       </div>
       <div class="text-sm mr-4">{ viewCount + " views" }</div>
