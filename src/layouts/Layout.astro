@@ -1,5 +1,6 @@
 ---
 import '@fontsource/roboto';
+import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 
@@ -26,6 +27,7 @@ const { title } = Astro.props;
 				html?.classList.remove('dark');
 		  	}
 		</script>
+		<ViewTransitions />
 	</head>
 	<body class="dark:bg-zinc-900 dark:text-zinc-50 bg-white text-zinc-950">
 		<Header />
