@@ -15,8 +15,8 @@ const { title, videoId, thumb, views, publishTime, channelTitle, channelThumb, s
 const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 ---
 
-<a href={`/video/${videoId}`} class="flex flex-col hover:brightness-50 transition-all duration-200 group gap-2">
-  <div class="relative rounded-md overflow-hidden bg-red-400 group-hover:rounded-none transition-all duration-200">
+<a href={`/video/${videoId}`} class="flex flex-col transition-all dark:hover:brightness-50 duration-200 group gap-2 hover:brightness-90 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+  <div class="relative rounded-md overflow-hidden group-hover:rounded-none transition-all duration-200">
     <img src={ thumb } class="object-contain h-full w-full" />
     <slot />
   </div>
@@ -28,7 +28,7 @@ const formatter = Intl.NumberFormat('en', { notation: 'compact' });
     }
     <div class="flex flex-col gap-2">
       <h5 class="text-ellipsis">{ title }</h5>
-      <div class="text-sm font-semibold text-white/[0.7] flex flex-col gap-1">
+      <div class="text-sm font-semibold text-zinc-900/[0.7] dark:text-white/[0.7] flex flex-col gap-1">
         <span>{ channelTitle }</span>
         <span class="flex gap-1">
           <span>{ formatter.format(Number(views)) }<span>{ publishTime ? " views" : " watching" }</span></span>

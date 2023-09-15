@@ -13,14 +13,14 @@ const { id, title, thumb, channelTitle, publishTime, views } = Astro.props as Pr
 const formatter = Intl.NumberFormat('en', { notation: 'compact' });
 ---
 
-<a href={`/video/${id}`} class="relative group/sug h-[102px] hover:brightness-50 transition-all duration-200">
+<a href={`/video/${id}`} class="relative group/sug h-[102px] dark:hover:brightness-50 hover:brightness-90 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all duration-200">
   <div class="rounded group-hover/sug:rounded-none overflow-hidden absolute top-[4px] left-0 h-[94px] w-[168px] brightness-90">
     <img src={thumb} alt="image" class=" object-cover" />
     <slot />
   </div>
   <div class="pl-[184px] flex flex-col gap-1">
     <h5 class="max-h-[3.2rem] leading-[1.6rem] text-ellipsis overflow-hidden break-all">{ title }</h5>
-    <div class="text-sm font-semibold text-white/[0.7] flex flex-col gap-1">
+    <div class="text-sm font-semibold text-zinc-950/[0.7] dark:text-white/[0.7] flex flex-col gap-1">
       <span>{ channelTitle }</span>
       <span class="flex gap-1">
         <span>{ formatter.format(Number(views)) }<span>{ publishTime ? " views" : " watching" }</span></span>

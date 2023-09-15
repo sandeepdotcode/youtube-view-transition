@@ -4,30 +4,30 @@ import SidebarItem from "./SidebarItem.astro";
 
 const { videoId } = Astro.params;
 ---
-<div data-sidebar class:list={["basis-60 shrink-0 h-screen py-16 overflow-y-auto w-60 -translate-x-60 md:translate-x-0 z-10 absolute md:static dark:bg-zinc-900 hidden md:block", { "md:absolute": videoId, "md:hidden": videoId}]}>
+<div data-sidebar class:list={["basis-60 shrink-0 h-screen py-16 overflow-y-auto w-60 -translate-x-60 md:translate-x-0 z-10 absolute md:static dark:bg-zinc-900 bg-white hidden md:block", { "md:absolute": videoId, "md:hidden": videoId}]}>
   <nav class="flex flex-col">
-    <section class="flex flex-col p-4 border-b dark:border-zinc-600">
+    <section class="flex flex-col p-4 border-b border-zinc-200 dark:border-zinc-600">
       { navLinks.map(link => (
           <SidebarItem text={link.text} route={link.route}>
-            <span class="w-4 fill-zinc-200">
+            <span class="w-4 fill-zinc-600 dark:fill-zinc-200">
               <Fragment set:html={link.icon} /> 
             </span>
           </SidebarItem>
         ))
       }
     </section>
-    <section class="flex flex-col p-4 border-b dark:border-zinc-600">
+    <section class="flex flex-col p-4 border-b border-zinc-200 dark:border-zinc-600">
       {
         playlists.map(list => (
           <SidebarItem text={list.text} route={list.route}>
-            <span class="w-4 fill-zinc-200">
+            <span class="w-4 fill-zinc-600 dark:fill-zinc-200">
               <Fragment set:html={list.icon} />
             </span>
           </SidebarItem>
         ))
       }
     </section>
-    <section class="flex flex-col p-4 border-b dark:border-zinc-600">
+    <section class="flex flex-col p-4 border-b border-zinc-200 dark:border-zinc-600">
       <h3>Subsriptions</h3>
       {
         channelSubs.map((channel) => (

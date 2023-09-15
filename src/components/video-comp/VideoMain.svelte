@@ -42,9 +42,9 @@
       <div class="text-sm mr-4">{ viewCount + " views" }</div>
     </div>
   </div>
-  <div class={`relative p-4 md-rounded mx-4 md:mx-0 flex flex-col gap-4 dark:bg-zinc-800 overflow-hidden ${expanded ? 'pb-8' : 'dark:hover:bg-zinc-600 group/desc'}`}>
+  <div class={`relative p-4 md-rounded mx-4 md:mx-0 flex flex-col gap-4 bg-zinc-100 dark:bg-zinc-800 overflow-hidden ${expanded ? 'pb-8' : 'hover:bg-zinc-300 dark:hover:bg-zinc-600 group/desc'}`}>
     <div>shared on { date }</div>
-    <div class={`overflow-hidden ${expanded ? '' : 'h-24 text-white/[0.8]'}`}>
+    <div class={`overflow-hidden ${expanded ? '' : 'h-24 text-zinc-900/[0.8] dark:text-white/[0.8]'}`}>
       <div class="whitespace-pre-wrap">{ desc }</div>
     </div>
     <button type="button" class={`absolute ${ expanded ? 'dark:hover:bg-zinc-600 bottom-2 right-2' : 'h-full w-full bottom-0 right-0'}`} on:click={expandDesc}>
