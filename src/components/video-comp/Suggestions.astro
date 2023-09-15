@@ -13,7 +13,7 @@ const url = `related?id=${videoId}`;
 const resp = await getDataFromYTAPI(url);
 ---
 
-<div class="flex flex-col gap-4 md:basis-[36rem] mx-4 md:mx-0">
+<div class="flex flex-col gap-4 md:basis-[36rem] mx-4 md:mx-0" transition:name="feed">
   <p>Suggested video</p>
   <div class="flex flex-col gap-4">
     { resp.data?.slice(0, 7).map((item) => (

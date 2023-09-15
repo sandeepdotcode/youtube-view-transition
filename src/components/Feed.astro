@@ -14,7 +14,8 @@ const { url = "home?lang=en", isChannel = false, isList = false } = Astro.props 
 const resp = await getDataFromYTAPI(url);
 ---
 
-<div class:list={["grow h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 mt-4",{ "pt-16 overflow-y-auto": !isChannel}]}>
+<div class:list={["grow h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 mt-4",{ "pt-16 overflow-y-auto": !isChannel}]}
+  transition:animate="slide" transition:name="feed">
   { !isChannel && !isList &&
     resp.data?.map((item) => {
     switch(item.type) {
