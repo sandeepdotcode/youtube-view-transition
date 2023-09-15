@@ -20,7 +20,7 @@ const resp = await getDataFromYTAPI(url);
       </div>
       <div class="flex flex-col gap-2">
         <h2 class="text-2xl">{ resp.meta?.title }</h2>
-        <div class="flex gap-4 text-zinc-900/[0.7] darK:text-white/[0.7] text-sm">
+        <div class="flex gap-4 text-zinc-900/[0.7] dark:text-white/[0.7] text-sm">
           <span>{ resp.meta?.channelHandle }</span><span>{ resp.meta?.subscriberCountText + " subscribers" }</span>
         </div>
         <!-- <div class="truncate text-white/[0.7] text-sm">{ resp.meta?.description }</div> -->
