@@ -22,10 +22,15 @@ const { title } = Astro.props;
 		<title>{title}</title>
 
 		<script is:inline>
-			if(localStorage.getItem('dark') === "false") {
-				const html = document.querySelector('html');
-				html?.classList.remove('dark');
+			const removeDarkMode = () => {
+				if(localStorage.getItem('dark') === "false") {
+					const html = document.querySelector('html');
+					html?.classList.remove('dark');
 		  	}
+			};
+
+			removeDarkMode();
+			document.addEventListener('astro:after-swap', removeDarkMode);
 		</script>
 		<ViewTransitions />
 	</head>
