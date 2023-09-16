@@ -27,6 +27,7 @@ const resp = await getDataFromYTAPI(url);
           </FeedItem>
         );
       case "video_listing":
+        if (url === "trending?geo=US") return null;
         return item.data?.map((lItem) => (
           <FeedItem title={lItem.title} videoId={lItem.videoId} thumb={lItem.thumbnail[0].url}
             publishTime={lItem.publishedTimeText} views={lItem.viewCount}
