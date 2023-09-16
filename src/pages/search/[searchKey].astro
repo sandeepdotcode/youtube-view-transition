@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Feed from "../../components/Feed.astro";
+
+const { searchKey = "Search" } = Astro.params;
+---
+
+
+<Layout title={'Search: ' + searchKey.replaceAll('+', ' ')}>
+  <Feed url={`search?query=${searchKey.replaceAll('+', '%20')}&type=video`} />
+</Layout>

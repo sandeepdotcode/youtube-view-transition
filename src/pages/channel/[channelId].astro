@@ -12,11 +12,11 @@ const resp = await getDataFromYTAPI(url);
 <Layout title={resp.meta?.title}>
   <div class="grow flex flex-col pt-16 overflow-y-auto">
     <div class="basis-[20vw] overflow-hidden shrink-0">
-      <img src={resp.meta?.banner[2].url} alt="" class="h-full w-full object-cover" />
+      { resp.meta.banner && <img src={resp.meta?.banner[2]?.url} alt="" class="h-full w-full object-cover" /> }
     </div>
     <div class="flex gap-4 p-8 pb-0">
       <div class="md:h-32 md:w-32 rounded-full overflow-hidden hidden md:block">
-        <img src={resp.meta?.avatar[2].url} alt="avatar" class="h-full w-full object-cover">
+        <img src={resp.meta?.avatar[2]?.url} alt="avatar" class="h-full w-full object-cover">
       </div>
       <div class="flex flex-col gap-2">
         <h2 class="text-2xl">{ resp.meta?.title }</h2>
@@ -31,3 +31,8 @@ const resp = await getDataFromYTAPI(url);
     </div>
   </div>
 </Layout>
+
+
+<script define:vars={{resp}}>
+  console.log(resp.meta)
+</script>
