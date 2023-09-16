@@ -49,7 +49,7 @@ const resp = await getDataFromYTAPI(url);
   { isList &&
     resp.data?.map((item) => (
       <FeedItem title={item.title} videoId={item.videoId} thumb={item.thumbnail[3].url}
-        publishTime={item.publishedTimeText} views={item.viewCount} channelTitle={resp.meta?.title}
+        publishTime={item.publishedTimeText} views={item.viewCount} channelTitle={item.videoOwnerChannelTitle}
         channelThumb="nolink" showChannelThumb={false}>
         <VidLength isText={true} length={item.lengthText} />
       </FeedItem>
